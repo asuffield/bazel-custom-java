@@ -4,4 +4,3 @@ build --javabase=@openjdk11_linux_archive//:runtime
 build --java_toolchain=//tools/toolchains:jdk11_toolchain
 build --host_java_toolchain=//tools/toolchains:jdk11_toolchain
 
-
