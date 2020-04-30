@@ -11,6 +11,16 @@ http_archive(
     ],
 )
 
+http_archive(
+    name = "remote_java_tools_linux",
+    sha256 = "c24aef916cc5a8e9f6d53db1f93c54fe5790a58996a1099592e1dfe992acc81e",
+    urls = [
+        "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v8.0/java_tools_javac11_linux-v8.0.zip",
+        "https://github.com/bazelbuild/java_tools/releases/download/javac11-v8.0/java_tools_javac11_linux-v8.0.zip",
+    ],
+)
+
+
 RULES_JVM_EXTERNAL_TAG = "3.2"
 
 http_archive(

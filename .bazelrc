@@ -1,6 +1,11 @@
 #
 build --host_javabase=@openjdk11_linux_archive//:runtime
 build --javabase=@openjdk11_linux_archive//:runtime
-build --java_toolchain=//tools/toolchains:jdk11_toolchain
-build --host_java_toolchain=//tools/toolchains:jdk11_toolchain
 
+# Use the following toolchain to replicate the javac crash against with bazel build //java:JdkBug
+#build --java_toolchain=@remote_java_tools_linux//:toolchain_jdk_11
+#build --host_java_toolchain=@remote_java_tools_linux//:toolchain_jdk_11
+
+# Use the following toolchain to replicate the erroneous strict dependency failure with bazel build //java:JavaBuildTest
+#build --java_toolchain=//tools/toolchains:jdk11_toolchain
+#build --host_java_toolchain=//tools/toolchains:jdk11_toolchain

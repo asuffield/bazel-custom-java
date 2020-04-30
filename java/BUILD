@@ -8,7 +8,7 @@ java_library(
 java_binary(
     name = "JavaBuildTest",
     srcs = ["JavaBuildTest.java"],
-    deps = ["@maven//:com_squareup_okhttp3_okhttp"]
+    deps = ["@maven//:com_squareup_okhttp3_okhttp", "@remote_java_tools_linux//:toolchain"]
 )
 
 java_binary(
