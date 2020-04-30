@@ -2,22 +2,19 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file"
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository", "new_git_repository")
 
 http_archive(
-    name = "openjdk11_linux_archive",
+    name = "remote_jdk12_linux",
     build_file_content = "java_runtime(name = 'runtime', srcs =  glob(['**']), visibility = ['//visibility:public'])",
-    sha256 = "df0de67998ac0c58b3c9e83c86e2a81daca05dc5adc189d942bc5d3f4691e749",
-    strip_prefix = "zulu11.39.15-ca-jdk11.0.7-linux_x64",
+    sha256 = "529c99841d69e11a85aea967ccfb9d0fd40b98c5b68dbe1d059002655e0a9c13",
+    strip_prefix = "zulu12.2.3-ca-jdk12.0.1-linux_x64",
     urls = [
-        "https://cdn.azul.com/zulu/bin/zulu11.39.15-ca-jdk11.0.7-linux_x64.tar.gz",
+        "https://mirror.bazel.build/openjdk/azul-zulu12.2.3-ca-jdk12.0.1/zulu12.2.3-ca-jdk12.0.1-linux_x64.tar.gz",
     ],
 )
 
 http_archive(
     name = "remote_java_tools_linux",
-    sha256 = "c24aef916cc5a8e9f6d53db1f93c54fe5790a58996a1099592e1dfe992acc81e",
-    urls = [
-        "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v8.0/java_tools_javac11_linux-v8.0.zip",
-        "https://github.com/bazelbuild/java_tools/releases/download/javac11-v8.0/java_tools_javac11_linux-v8.0.zip",
-    ],
+    sha256 = "fc199be2c7873b0792e00743679fedc1d249fa779c3fe7676111f8d7ced9f2b4",
+    urls = ["https://mirror.bazel.build/bazel_java_tools/releases/javac12/v2.0/java_tools_javac12_linux-v2.0.zip"],
 )
 
 
